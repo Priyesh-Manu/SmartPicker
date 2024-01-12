@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('multiSection/',views.multi,name='multiSelection')
 ]
