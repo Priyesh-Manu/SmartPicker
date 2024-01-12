@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Start of the content -->
+
+  <div class=" pt-4">
+      
+     <div class="p-3 ">
+        <form action="" method="post" style="width:400px; background-color:#fcfafa; box-shadow: 8px 15px 10px rgba(0, 0, 0, 0.1);">
+          {% csrf_token %}
+          <h3 class="text-center">Join with us</h3>
+            
+            <label for="option">User Name :</label>
+            <input type="text" name="username" required >
+
+            <label for="option">First Name :</label>
+            <input type="text" name="firstname" required >
+
+            <label for="option">Last Name :</label>
+            <input type="text" name="lastname" >
+
+            <label for="option">E-mail :</label>
+            <input type="email" name="email" required >
+
+            <label for="option">Create Password :</label>
+            <input type="text" name="crpassword" required >
+
+            <label for="option">Conform Password :</label>
+            <input type="text" name="cnpassword" required ><br>
+
+            <button type="submit" class="d-block mx-auto">Sign up</button><br>
+            
+            <div class="text-center"> 
+                Already have a account? <a href="{% url 'login' %}">Log in</a>
+            </div>
+        </form>
+      </div>
+  </div>
+
+  <!-- End of the content -->
+
+  
+{% endblock content%}

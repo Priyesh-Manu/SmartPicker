@@ -55,3 +55,10 @@ def multi(request):
             
     return render(request, 'multi_selection.html', {'option': option, 'num':num, 'multiple_option':selected_posi,})
     
+
+
+def user_login(request):
+    return render(request,'login.html')
+
+def user_signup(request):
+    return render(request,'signup.html')

@@ -12,7 +12,7 @@
      <div class="p-3 ">
   
         {% if num == 0 %}
-        <form action="" method="get">
+        <form action="" method="get" id="forms">
           {% csrf_token %}
             <label for="option">Add the options :<br>(Enter all option with using coma "," )</label>
             <input type="text" id="options" name="options" required >
