@@ -3,22 +3,32 @@
 {% block content %}
   <!-- Start of the content -->
 
-  <div class=" pt-4">
+  <div class="pt-4">
       
-     <div class="p-3 ">
+     <div class="p-3">
         <br>
+        <!-- Login form -->
         <form action="" method="post" style="width:350px; background-color:#fcfafa; box-shadow: 8px 15px 10px rgba(0, 0, 0, 0.1);">
           {% csrf_token %}
           <h3 class="text-center">Join with us</h3>
 
-            <label for="option">Username :</label>
-            <input type="text" name="username" required >
-            <label for="option">Password :</label>
-            <input type="text" name="password" required ><br>
+            <!-- Username input field -->
+            <label for="option">Username:</label>
+            <input type="text" name="username" required>
+
+            <!-- Password input field -->
+            <label for="option">Password:</label>
+            <input type="password" name="password" required><br>
+
+            <!-- Submit button -->
             <button type="submit" class="d-block mx-auto">Log in</button><br>
 
+            <!-- Display error messages -->
             <div class="text-center"> 
-                Dont have a account? <a href="{% url 'signup' %}">Sign up</a>
+                {% for message in messages %}
+                    <h5>{{ message }}</h5>
+                {% endfor %}
+                Don't have an account? <a href="{% url 'signup' %}">Sign up</a>
             </div>
         </form>
       </div>
@@ -26,5 +36,4 @@
 
   <!-- End of the content -->
 
-  
 {% endblock content%}

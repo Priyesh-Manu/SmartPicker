@@ -1,47 +1,48 @@
 {% extends "base.html" %}
+
 {% load static %}
+
 {% block content %}
   <!-- Start of the content -->
-
-  <div class=" pt-4">
+  <div class="pt-4">
     <div class="text-center">
       <br>
-      <img src={% static "Logo/png/head.png" %} alt="" id="head" >
+      <!-- Display the header logo -->
+      <img src={% static "Logo/png/head.png" %} alt="" id="head">
     </div>
-      
-     <div class="p-3 ">
-  
+    
+    <div class="p-3">
         {% if num == 0 %}
+        <!-- Form to input options if num is 0 -->
         <form action="" method="get" id="forms">
           {% csrf_token %}
-            <label for="option">Add the options :<br>(Enter all option with using coma "," )</label>
-            <input type="text" id="options" name="options" required >
+            <label for="options">Add the options:<br>(Enter all options using a comma ",")</label>
+            <input type="text" id="options" name="options" required>
             <button type="submit">Choose</button>
         </form>
         {% endif %}
-      </div>
+    </div>
   </div>
-
   <!-- End of the content -->
 
   <!-- Start of the result -->
-
-  <div class="text-center" >
+  <div class="text-center">
     {% if num == 1 %}
-    <div class="text-xl text-secondary">
-        <h3 >Options are :</h3>
-      {% for i in option %}
-        &nbsp;#{{i|capfirst }}
-      {% endfor %}
-      <br><br>
-    </div>
-    <div class="result">
-        <h2>SmartPicker selected {{ch|upper}}</h2>
-        <a href={% url 'home' %}><button>Retry</button></a>
-    </div>
+        <div class="text-xl text-secondary">
+            <!-- Display the selected options -->
+            <h3>Options are :</h3>
+            {% for i in option %}
+                &nbsp;#{{i|capfirst}}
+            {% endfor %}
+            <br><br>
+        </div>
+        <div class="result">
+            <!-- Display the option selected by SmartPicker -->
+            <h2>SmartPicker selected {{ch|upper}}</h2>
+            <!-- Retry button linking to the 'home' URL -->
+            <a href={% url 'home' %}><button>Retry</button></a>
+        </div>
     {% endif %}
   </div>
-
   <!-- End of the result -->
-  
-{% endblock content%}
+{% endblock content %}
