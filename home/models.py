@@ -5,3 +5,7 @@ from django.db import models
 class ContactMessage(models.Model):
     email = models.CharField(max_length=100)
     message=models.TextField()
+    message_date = models.DateField(auto_now=True)
+    message_replied = models.BooleanField(default=False)
+    def __str__(self):
+        return str(self.message_date)
