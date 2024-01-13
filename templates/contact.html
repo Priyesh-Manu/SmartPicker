@@ -3,7 +3,7 @@
 {% block content %}
   <!-- Start of the content -->
 
-  <div class="pt-5">
+  <div class="pt-3">
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto text-center p-4">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="text-top">
-        <form action="" method="post" style="max-width: 400px;">
+        <form action="" method="post" encrypt="multipart/form-data" style="max-width: 400px;">
             {% csrf_token %}
             <input type="email" id="contactemail" name="contactemail" placeholder="Your Email" required>
             <textarea id="contactmsg" name="contactmsg" placeholder="Type your message here" required style="height: 100px; width:100%"></textarea>
