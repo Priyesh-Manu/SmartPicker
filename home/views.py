@@ -125,3 +125,8 @@ def user_logout(request):
     # Logout the user and redirect to home
     logout(request)
     return redirect('home')
+
+# Function for contact
+
+def contact(request):
+    return render(request,'contact.html')

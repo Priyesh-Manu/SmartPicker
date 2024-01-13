@@ -39,7 +39,7 @@
                   {% else %}
                     <li onclick="multiAlert()"><a class="dropdown-item" href="#">Multiple-Selection</a></li>
                   {% endif %}
-                    <li><a class="dropdown-item" href="#">Contact us</a></li>
+                    <li><a class="dropdown-item" href="{% url 'contact' %}">Contact us</a></li>
                     <li><a class="dropdown-item" onclick="PremiumAlert()" href="#">Premium 🌟</a></li>
                 </ul>
             </li>
@@ -71,7 +71,7 @@
   {% endblock content %}
   
   <!-- Custom JavaScript -->
-  <script src="{% static "js/alert.js" %}" defer></script>
+  <script src="{% static "js/alert.js" %}" ></script>
   
   <!-- Bootstrap and jQuery JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

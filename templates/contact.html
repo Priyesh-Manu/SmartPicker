@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Start of the content -->
+
+  <div class="pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto text-center p-4">
+          <h1 class="font-weight-bold"><strong>Contact Us</strong></h1><br>
+          <p class="fs-5">We would love to hear from you! Reach out to us on smartpicker@gmail.com or use the form below to share any feedback or if you have any questions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-top">
+        <form action="" method="post" style="max-width: 400px;">
+            {% csrf_token %}
+            <input type="email" id="contactemail" name="contactemail" placeholder="Your Email" required>
+            <textarea id="contactmsg" name="contactmsg" placeholder="Type your message here" required style="height: 100px; width:100%"></textarea>
+            
+    
+            <br><br>
+            <button type="submit" onclick="message()">Submit</button>
+        </form>
+    </div>
+    
+  </div>
+  <!-- End of the content -->
+
+{% endblock content%}

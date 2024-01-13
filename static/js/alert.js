@@ -5,5 +5,11 @@ function multiAlert() {
 
 // Function to display an alert message acknowledging the user's premium status and suggesting logging in for multiple selections
 function PremiumAlert() {
-    alert('Thank you for your update. While the premium function is under process, you can "log in" to access the feature of multiple selections.');
+    alert('Thank you for your update. While the premium feature is under process, you can "log in" to access the feature of multiple selections.');
 }
+
+// Function to display an alert of their message is successfully get
+function message() {
+    alert('Thank you for your message. Our team will contact you soon via email.');
+}
+
