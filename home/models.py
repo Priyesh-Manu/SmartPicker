@@ -7,5 +7,4 @@ class ContactMessage(models.Model):
     message=models.TextField()
     message_date = models.DateField(auto_now=True)
     message_replied = models.BooleanField(default=False)
-    def __str__(self):
-        return str(self.message_date)
+    

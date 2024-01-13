@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login,logout
+from . models import ContactMessage
 import random
 # Create your views here.
 
@@ -129,4 +130,11 @@ def user_logout(request):
 # Function for contact
 
 def contact(request):
-    return render(request,'contact.html')
+    if request.method == 'POST':
+        email= request.POST['contactemail']
+        message = request.POST['contactmsg']
+        req_contact= ContactMessage(email=email,message=message)
+        req_contact.save()
+        return redirect('home')
+    else:
+        return render(request,'contact.html')
